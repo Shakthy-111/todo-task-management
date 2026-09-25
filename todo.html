@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow</title>
+
+    <link rel="stylesheet" href="todo.css">
+
+</head>
+
+
+<body>
+
+    <div class="app">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <div class="logo-icon">✓</div>
+
+                <span>TaskFlow</span>
+
+            </div>
+
+
+            <div class="menu">
+
+                <div class="menu-item active" data-filter="all">
+
+                    <span>▣</span>
+                    <span>My Tasks</span>
+
+                </div>
+
+
+                <div class="menu-item" data-filter="important">
+
+                    <span>★</span>
+                    <span>Important</span>
+
+                </div>
+
+
+                <div class="menu-item" data-filter="completed">
+
+                    <span>✓</span>
+                    <span>Completed</span>
+
+                </div>
+
+
+                <div class="menu-item" data-filter="active">
+
+                    <span>○</span>
+                    <span>Pending</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-footer">
+
+                Stay organized.
+                <br>
+                One task at a time.
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN ================= -->
+
+        <main class="main">
+
+
+            <!-- TOP -->
+
+            <div class="top">
+
+                <div>
+
+                    <p class="welcome">
+                        WELCOME BACK 👋
+                    </p>
+
+                    <h1>
+                        My Tasks
+                    </h1>
+
+                </div>
+
+
+                <div class="today" id="today">
+
+                    Today
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= STATISTICS ================= -->
+
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <span>Total Tasks</span>
+
+                    <strong id="totalTasks">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>Pending</span>
+
+                    <strong id="pendingTasks">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>Completed</span>
+
+                    <strong id="completedTasks">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= CREATE TASK ================= -->
+
+            <div class="create-box">
+
+                <h2>
+                    Create a task
+                </h2>
+
+                <p>
+                    What do you need to get done?
+                </p>
+
+
+                <div class="input-row">
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="e.g. Complete Java assignment"
+                    >
+
+
+                    <select id="priorityInput">
+
+                        <option value="Low">
+                            Low Priority
+                        </option>
+
+                        <option value="Medium" selected>
+                            Medium Priority
+                        </option>
+
+                        <option value="High">
+                            High Priority
+                        </option>
+
+                    </select>
+
+
+                    <input
+                        type="date"
+                        id="dueDateInput"
+                    >
+
+
+                    <button id="addButton">
+                        + Add Task
+                    </button>
+
+                </div>
+
+
+                <p id="message"></p>
+
+            </div>
+
+
+            <!-- ================= TASK AREA ================= -->
+
+            <div class="task-area">
+
+
+                <div class="task-header">
+
+                    <div>
+
+                        <h2>
+                            Your Tasks
+                        </h2>
+
+                        <p class="subtitle">
+                            Keep track of everything you need to do.
+                        </p>
+
+                    </div>
+
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search tasks..."
+                    >
+
+                </div>
+
+
+                <!-- ================= FILTER BUTTONS ================= -->
+
+                <div class="filters">
+
+                    <button
+                        class="filter-btn active"
+                        data-filter="all"
+                    >
+                        All
+                    </button>
+
+
+                    <button
+                        class="filter-btn"
+                        data-filter="active"
+                    >
+                        Active
+                    </button>
+
+
+                    <button
+                        class="filter-btn"
+                        data-filter="completed"
+                    >
+                        Completed
+                    </button>
+
+
+                    <button
+                        class="filter-btn"
+                        data-filter="important"
+                    >
+                        Important
+                    </button>
+
+                </div>
+
+
+                <!-- ================= TASK LIST ================= -->
+
+                <ul id="taskList"></ul>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="todo.js"></script>
+
+</body>
+
+</html>
