@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow</title>
+    <meta name="description" content="A calm, focused space to organize your tasks and make progress.">
+    <meta name="theme-color" content="#17233b">
+
+    <link rel="stylesheet" href="todo.css">
+
+</head>
+
+
+<body>
+
+    <div class="app">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <div class="logo-icon">✓</div>
+
+                <span>TaskFlow</span>
+
+            </div>
+
+
+            <nav class="menu" aria-label="Task filters">
+
+                <button type="button" class="menu-item active" data-filter="all">
+
+                    <span aria-hidden="true">▣</span>
+                    <span>My Tasks</span>
+
+                </button>
+
+
+                <button type="button" class="menu-item" data-filter="important">
+
+                    <span aria-hidden="true">★</span>
+                    <span>Important</span>
+
+                </button>
+
+
+                <button type="button" class="menu-item" data-filter="completed">
+
+                    <span aria-hidden="true">✓</span>
+                    <span>Completed</span>
+
+                </button>
+
+
+                <button type="button" class="menu-item" data-filter="active">
+
+                    <span aria-hidden="true">○</span>
+                    <span>Pending</span>
+
+                </button>
+
+            </nav>
+
+
+            <div class="sidebar-footer">
+
+                Stay organized.
+                <br>
+                One task at a time.
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN ================= -->
+
+        <main class="main">
+
+
+            <!-- TOP -->
+
+            <div class="top">
+
+                <div>
+
+                    <p class="welcome">
+                        WELCOME BACK 👋
+                    </p>
+
+                    <h1>
+                        My Tasks
+                    </h1>
+
+                </div>
+
+
+                <div class="today" id="today">
+
+                    Today
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= STATISTICS ================= -->
+
+            <div class="stats">
+
+                <div class="stat-card">
+
+                    <span>Total Tasks</span>
+
+                    <strong id="totalTasks">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>Pending</span>
+
+                    <strong id="pendingTasks">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span>Completed</span>
+
+                    <strong id="completedTasks">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= CREATE TASK ================= -->
+
+            <div class="create-box">
+
+                <h2>
+                    Create a task
+                </h2>
+
+                <p>
+                    What do you need to get done?
+                </p>
+
+
+                <div class="input-row">
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        aria-label="Task name"
+                        placeholder="e.g. Complete Java assignment"
+                    >
+
+
+                    <select id="priorityInput" aria-label="Task priority">
+
+                        <option value="Low">
+                            Low Priority
+                        </option>
+
+                        <option value="Medium" selected>
+                            Medium Priority
+                        </option>
+
+                        <option value="High">
+                            High Priority
+                        </option>
+
+                    </select>
+
+
+                    <input
+                        type="date"
+                        id="dueDateInput"
+                        aria-label="Task due date"
+                    >
+
+
+                    <button id="addButton">
+                        + Add Task
+                    </button>
+
+                </div>
+
+
+                <p id="message"></p>
+
+            </div>
+
+
+            <!-- ================= TASK AREA ================= -->
+
+            <div class="task-area">
+
+
+                <div class="task-header">
+
+                    <div>
+
+                        <h2>
+                            Your Tasks
+                        </h2>
+
+                        <p class="subtitle">
+                            Keep track of everything you need to do.
+                        </p>
+
+                    </div>
+
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        aria-label="Search tasks"
+                        placeholder="Search tasks..."
+                    >
+
+                </div>
+
+
+                <!-- ================= FILTER BUTTONS ================= -->
+
+                <div class="filters">
+
+                    <button
+                        class="filter-btn active"
+                        data-filter="all"
+                    >
+                        All
+                    </button>
+
+
+                    <button
+                        class="filter-btn"
+                        data-filter="active"
+                    >
+                        Active
+                    </button>
+
+
+                    <button
+                        class="filter-btn"
+                        data-filter="completed"
+                    >
+                        Completed
+                    </button>
+
+
+                    <button
+                        class="filter-btn"
+                        data-filter="important"
+                    >
+                        Important
+                    </button>
+
+                </div>
+
+
+                <!-- ================= TASK LIST ================= -->
+
+                <ul id="taskList" aria-label="Your task list"></ul>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="todo.js"></script>
+
+</body>
+
+</html>
